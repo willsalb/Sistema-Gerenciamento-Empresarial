@@ -1,0 +1,36 @@
+﻿@model ProdutoModel
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+
+<div class="text-center">
+
+    <h1 class="display-4" style="font-size: 50px; margin-bottom: 10%;">Editar Produto</h1>
+
+</div>
+
+<form asp-controller="Produto" asp-action="Alterar" method="post">
+    <div class="mb-3">
+        <label>Código</label>
+        <input type="number" asp-for="Codigo" class="form-control" placeholder="Digite o código" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Nome</label>
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do produto">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantidade</label>
+        <input type="number" asp-for="Qtde" class="form-control" placeholder="Digite a quantidade do produto">
+    </div>
+
+    <div class="mb-3">
+        <label for="exampleInputPassword1" asp-for="ValorUnit" class="form-label">Valor Unit</label>
+        <input type="number" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Adicionar</button>
+    <button type="submit" class="btn btn-secondary" style="margin-left: 10px;" role="button" asp-controller="Produto" asp-action="Index">Voltar</button>
+</form>
